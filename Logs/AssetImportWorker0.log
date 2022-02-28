@@ -222,3 +222,12 @@ Received Import Request.
 Start importing Assets/SteamVR/Prefabs/[Status].prefab using Guid(255333d57084e4e46b3d948279746a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a89413230481fe6f10ee96b169616093') in 0.056310 seconds 
   Import took 0.062357 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 910.845239 seconds.
+  path: Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset
+  artifactKey: Guid(f81826191484dfb42a06d586e4224961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset using Guid(f81826191484dfb42a06d586e4224961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b38c98eb15d7324effa965937beab74e') in 0.012707 seconds 
+  Import took 0.017943 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
