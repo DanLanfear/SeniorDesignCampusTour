@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637806240558261791
-    m_Hash: 2738226939
+      ticks: 637818305001817782
+    m_Hash: 4176200656
   m_LockFileStatus:
     m_FilePath: C:/Users/lanfeadb/Desktop/unity/Next Attempt/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637806240558301688
+      ticks: 637818305154736827
     m_Hash: 1507621736
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
