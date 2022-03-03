@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
 public class ObjGoal
 {
     public GoalType goalType;
@@ -9,9 +10,13 @@ public class ObjGoal
 
     public bool IsReached()
     {
-        return false;
+        return (currentAmount >= requiredAmount);
     }
 
+    public void Progress()
+    {
+        requiredAmount++;
+    }
 }
 
 public enum GoalType
