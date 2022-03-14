@@ -21,4 +21,8 @@ public class ObjectiveGiver : MonoBehaviour
         window.SetActive(true);
         descText.text = obj.description;
     }
+    public void DisplayCompletedObjective()
+    {
+        descText.text = string.Format("<s>{0}</s> {1}", descText.text, obj.state.ToString());
+    }
 }

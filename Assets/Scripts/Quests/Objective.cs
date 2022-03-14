@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class Objective
@@ -9,7 +9,7 @@ public class Objective
     public string description;
     public State state = State.Unassigned;
     public ObjGoal goal;
-    public TMP_Text text;
+    public UnityEvent completedObjective;
 
 
 
@@ -21,8 +21,7 @@ public class Objective
             {
                 state = State.Complete;
                 Debug.Log("Objective complete");
-                text.text = text.text + state.ToString();
-
+                completedObjective.Invoke();
             }
         }
     }

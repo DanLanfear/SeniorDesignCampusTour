@@ -15,7 +15,9 @@ public class ObjGoal
 
     public void Progress()
     {
-        requiredAmount++;
+        Debug.Log("Goal Progress");
+
+        currentAmount++;
     }
 }
 

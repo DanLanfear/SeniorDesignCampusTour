@@ -9,8 +9,11 @@ public class Player : MonoBehaviour
 
     public void Progress()
     {
+        Debug.Log("progress");
         if(objective.state == State.Assigned)
         {
+            Debug.Log("Assigned Objective");
+
             objective.goal.Progress();
             if(objective.goal.IsReached())
             {
