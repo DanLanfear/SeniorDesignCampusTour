@@ -4,25 +4,33 @@ using UnityEngine;
 using TMPro;
 public class ObjectiveGiver : MonoBehaviour
 {
-    public Objective obj;
+    public ObjectiveList objectives;
     public Player player;
     public GameObject window;
     public TMP_Text descText;
 
-    public void GiveObjective()
+    public void Start()
     {
-        obj.state = State.Assigned;
-        player.objective = obj;
-        DisplayObjective();
+        GiveObjective(0);
     }
 
-    public void DisplayObjective()
+    public void GiveObjective(int id)
+    {
+        objectives.Assign(id);
+        //ugly for now might work later
+        objectives.objectives[id].completedObjective.AddListener(DisplayCompletedObjective);
+        //player.objective = obj;
+        DisplayObjective(id);
+        
+    }
+
+    public void DisplayObjective(int id)
     {
         window.SetActive(true);
-        descText.text = obj.description;
+        descText.text = objectives.GetObjective(id).description;
     }
-    public void DisplayCompletedObjective()
+    public void DisplayCompletedObjective(int id)
     {
-        descText.text = string.Format("<s>{0}</s> {1}", descText.text, obj.state.ToString());
+        descText.text = string.Format("<s>{0}</s> {1}", descText.text, objectives.GetObjective(id).state.ToString());
     }
 }
