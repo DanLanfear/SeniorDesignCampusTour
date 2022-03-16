@@ -23,7 +23,7 @@ public class ObjectiveGiver : MonoBehaviour
         objectives.objectives[id].completedObjective.AddListener(DisplayCompletedObjective);
         //player.objective = obj;
         DisplayObjective(id);
-        
+
     }
 
     public void DisplayObjective(int id)
