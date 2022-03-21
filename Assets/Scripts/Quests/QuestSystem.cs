@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class ObjectiveGiver : MonoBehaviour
+public class QuestSystem : MonoBehaviour
 {
-    public ObjectiveList objectives;
-    public Player player;
+    public QuestList objectives;
+    public MainPlayer player;
     public GameObject window;
     public TMP_Text descText;
 

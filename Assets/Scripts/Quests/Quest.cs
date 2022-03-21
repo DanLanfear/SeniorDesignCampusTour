@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class Objective
+public class Quest
 {
     public string description;
     public int id;
     public State state = State.Unassigned;
-    public ObjGoal goal;
-    public CompletionEvent completedObjective;
+    public QuestGoal goal;
+    public QuestCompletionEvent completedObjective;
 
 
 

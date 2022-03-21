@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class MainPlayer : MonoBehaviour
 {
-    public ObjectiveList objectives;
+    public QuestList objectives;
 
 
     public void Progress(int id)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class ObjGoal
+public class QuestGoal
 {
     public GoalType goalType;
     public int requiredAmount = 0;

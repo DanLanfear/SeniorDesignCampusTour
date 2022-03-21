@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectiveIdentifier : MonoBehaviour
+public class QuestID : MonoBehaviour
 {
-    public CompletionEvent completion;
+    public QuestCompletionEvent completion;
     public int id = -1;
 
 

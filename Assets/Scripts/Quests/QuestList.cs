@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ObjectiveList : MonoBehaviour
+public class QuestList : MonoBehaviour
 {
-    public List<Objective> objectives;
+    public List<Quest> objectives;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class ObjectiveList : MonoBehaviour
         }
     }
 
-    public Objective GetObjective(int id)
+    public Quest GetObjective(int id)
     {
         return objectives[id];
     }
