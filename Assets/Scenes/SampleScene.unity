@@ -166,6 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 241313956}
+  - component: {fileID: 241313955}
   m_Layer: 0
   m_Name: Objective List
   m_TagString: Untagged
@@ -173,6 +174,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &241313955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241313954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aee9eeeca730434697249c20a24b5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives:
+  - description: Pick Up The Cube
+    id: 0
+    state: 0
+    goal:
+      goalType: 1
+      requiredAmount: 1
+      currentAmount: 0
+    completedObjective:
+      m_PersistentCalls:
+        m_Calls: []
+  - description: Throw The Cube
+    id: 0
+    state: 0
+    goal:
+      goalType: 1
+      requiredAmount: 1
+      currentAmount: 0
+    completedObjective:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &241313956
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,6 +1118,7 @@ GameObject:
   - component: {fileID: 1061832185}
   - component: {fileID: 1061832188}
   - component: {fileID: 1061832187}
+  - component: {fileID: 1061832189}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -1151,6 +1186,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XRRig: {fileID: 1061832185}
+--- !u!114 &1061832189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061832184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe9aac5c94b537459eb66e1166346c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: {fileID: 241313955}
 --- !u!1 &1152945362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1347,8 @@ GameObject:
   - component: {fileID: 1516321725}
   - component: {fileID: 1516321724}
   - component: {fileID: 1516321723}
+  - component: {fileID: 1516321729}
+  - component: {fileID: 1516321722}
   m_Layer: 0
   m_Name: CubeObject
   m_TagString: Untagged
@@ -1306,6 +1356,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1516321722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516321721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf5a6ff6beba747901d87f902a19af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061832189}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Progress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  id: 1
 --- !u!114 &1516321723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,10 +1425,46 @@ MonoBehaviour:
       m_Calls: []
   m_OnActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1516321729}
+        m_TargetAssemblyTypeName: QuestID, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1883051766}
+        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
+        m_MethodName: GiveObjective
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeactivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1516321729}
+        m_TargetAssemblyTypeName: QuestID, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CustomReticle: {fileID: 0}
   m_AttachTransform: {fileID: 0}
   m_AttachEaseInTime: 0.15
@@ -1476,6 +1590,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516321729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516321721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf5a6ff6beba747901d87f902a19af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061832189}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Progress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  id: 0
 --- !u!1 &1738533822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1883051767}
+  - component: {fileID: 1883051766}
   m_Layer: 0
   m_Name: ObjectiveSystem
   m_TagString: Untagged
@@ -1836,6 +1979,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1883051766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883051765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f51cffae0b8898449770bb1f23f61a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: {fileID: 241313955}
+  player: {fileID: 1061832189}
+  window: {fileID: 345218688}
+  descText: {fileID: 1927874495}
 --- !u!4 &1883051767
 Transform:
   m_ObjectHideFlags: 0

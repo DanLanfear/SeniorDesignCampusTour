@@ -5,7 +5,7 @@ using TMPro;
 public class QuestSystem : MonoBehaviour
 {
     public QuestList objectives;
-    public MainPlayer player;
+    public Player player;
     public GameObject window;
     public TMP_Text descText;
 
