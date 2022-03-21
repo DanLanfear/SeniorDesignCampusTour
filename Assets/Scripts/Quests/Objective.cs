@@ -7,9 +7,11 @@ using UnityEngine.Events;
 public class Objective
 {
     public string description;
+    public int id;
     public State state = State.Unassigned;
     public ObjGoal goal;
-    public UnityEvent completedObjective;
+    public CompletionEvent completedObjective;
+
 
 
 
@@ -21,7 +23,7 @@ public class Objective
             {
                 state = State.Complete;
                 Debug.Log("Objective complete");
-                completedObjective.Invoke();
+                completedObjective.Invoke(id);
             }
         }
     }
