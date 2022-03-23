@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Objective objective;
+    public QuestList objectives;
 
 
-    public void Progress()
+    public void Progress(int id)
     {
-        Debug.Log("progress");
-        if(objective.state == State.Assigned)
+        if (objectives.GetObjective(id).state == State.Assigned)
         {
-            Debug.Log("Assigned Objective");
-
-            objective.goal.Progress();
-            if(objective.goal.IsReached())
-            {
-                objective.Complete();
-            }
+            Debug.Log("progress");
+            objectives.Progress(id);
         }
     }
 }
