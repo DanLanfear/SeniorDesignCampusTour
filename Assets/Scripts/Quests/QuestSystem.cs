@@ -16,23 +16,24 @@ public class QuestSystem : MonoBehaviour
 
     }
 
-    public void GiveObjective(int id)
+    public void GiveObjective(int QuestId)
     {
-        objectives.Assign(id);
+        objectives.Assign(QuestId);
         //ugly for now might work later
-        objectives.objectives[id].completedObjective.AddListener(DisplayCompletedObjective);
+        objectives.objectives[QuestId].completedObjective.AddListener(DisplayCompletedObjective);
         //player.objective = obj;
-        DisplayObjective(id);
+        DisplayObjective(QuestId);
 
     }
 
     public void DisplayObjective(int id)
     {
         Debug.Log(objectives.GetObjective(id).description);
-        descText.text = objectives.GetObjective(id).description;
+        descText.text += (objectives.GetObjective(id).description + "\n");
     }
+
     public void DisplayCompletedObjective(int id)
     {
-        descText.text = string.Format("<s>{0}</s> {1}", descText.text, objectives.GetObjective(id).state.ToString());
+        descText.text = string.Format("<s>{0}</s>", descText.text);
     }
 }
