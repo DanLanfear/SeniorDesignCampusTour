@@ -20,7 +20,6 @@ public class QuestSystem : MonoBehaviour
         objectives.Assign(QuestId);
         //ugly for now might work later
         objectives.objectives[QuestId].completedObjective.AddListener(DisplayCompletedObjective);
-        //player.objective = obj;
         DisplayObjective(QuestId);
 
     }
