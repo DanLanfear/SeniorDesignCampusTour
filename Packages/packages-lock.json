@@ -127,7 +127,7 @@
       "url": "https://packages.unity.com"
     },
     "com.valvesoftware.unity.openvr": {
-      "version": "file:C:/Users/lanfeadb/Desktop/unity/com.valvesoftware.unity.openvr-1.1.5.tgz",
+      "version": "file:../com.valvesoftware.unity.openvr-1.1.5.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
