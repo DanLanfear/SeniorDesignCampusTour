@@ -7,13 +7,12 @@ public class QuestSystem : MonoBehaviour
     public QuestList objectives;
     public Player player;
     public GameObject window;
-    public TMP_Text descText;
+    public List<TMP_Text> TextList;
 
     public void Start()
     {
         window.SetActive(true);
         GiveObjective(0);
-
     }
 
     public void GiveObjective(int QuestId)
@@ -21,19 +20,19 @@ public class QuestSystem : MonoBehaviour
         objectives.Assign(QuestId);
         //ugly for now might work later
         objectives.objectives[QuestId].completedObjective.AddListener(DisplayCompletedObjective);
-        //player.objective = obj;
         DisplayObjective(QuestId);
 
     }
 
     public void DisplayObjective(int id)
     {
-        Debug.Log(objectives.GetObjective(id).description);
-        descText.text += (objectives.GetObjective(id).description + "\n");
+        //Debug.Log(objectives.GetObjective(id).description);
+
+        TextList[id].text = (objectives.GetObjective(id).description);
     }
 
     public void DisplayCompletedObjective(int id)
     {
-        descText.text = string.Format("<s>{0}</s>", descText.text);
+        TextList[id].text = string.Format("<s>{0}</s>", TextList[id].text);
     }
 }
